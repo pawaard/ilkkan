@@ -32,7 +32,7 @@ export function remoteCard(m) {
       <fieldset class="seg-group"><legend class="sr-only">${t("remote.status")}</legend>${statusRadios(m)}</fieldset>
       <label class="field field--tight"><span class="field__label">${t("remote.clock")}</span><input class="input" name="clock" value="${m.clock}" maxlength="8" placeholder="34'" /></label>
       <label class="field field--tight field--grow"><span class="field__label">${t("remote.period")}</span><input class="input" name="period" value="${m.period}" maxlength="40" placeholder="34. dakika" /></label>
-      <button class="btn-plain btn-plain--mint" type="submit">${t("common.save")}</button>
+      <button class="btn-plain btn-plain--red" type="submit">${t("common.save")}</button>
     </form>
   </article>`;
 }

@@ -54,7 +54,7 @@ export const SEED = Object.freeze({
     ["— Cebinde kaç para var?", "— On lira. Hiç olmasa bu kadar üzülmezdim."],
   ],
 
-  // Kayan nane yeşili bant: İlkkan atasözüyle konuşur
+  // Kayan kırmızı bant: İlkkan atasözüyle konuşur
   quotes: [
     "Damlaya damlaya göl olur. Paslaşa paslaşa gol olur.",
     "Sakla samanı, gelir zamanı. Sakla golü, gelir uzatması.",
@@ -109,11 +109,11 @@ export const SEED = Object.freeze({
   */
   ads: {
     creatives: {
-      "kola-cay": { brand: "Kolaçay", tagline: "Evde çay yoksa.", note: "Sıcak suya iki damla kola. İlkkan usulü.", cta: "Demlemeye başla", icon: "i-tea", tone: "mint", serif: true },
-      "huzur-yastik": { brand: "Huzur Yastık", tagline: "Penaltıda bile sakin kal.", note: "Uzatmalar dahil.", cta: "Sarıl", icon: "i-pillow", tone: "lilac" },
-      "atasozu-rehberi": { brand: "Atasözü Rehberi", tagline: "Her pozisyona bir söz.", note: "Ofsayt dahil. Bulamazsak uydururuz.", cta: "Sayfayı aç", icon: "i-book", tone: "coral", serif: true },
-      "iki-taraf-atki": { brand: "İki Taraf Atkı", tagline: "Bir ucu bir takımın, öbür ucu öbürünün.", note: "Kimse kırılmasın diye.", cta: "Boynuna dola", icon: "i-scarf", tone: "moon" },
-      "onluk-bank": { brand: "Onluk Bank", tagline: "Cebinde on lira mı kaldı?", note: "Hiç olmasa daha az üzülürdün. Biz anlıyoruz.", cta: "Hesap aç", icon: "i-coin", tone: "mint" },
+      "kola-cay": { brand: "Kolaçay", tagline: "Evde çay yoksa.", note: "Sıcak suya iki damla kola. İlkkan usulü.", cta: "Demlemeye başla", icon: "i-tea", tone: "red", serif: true },
+      "huzur-yastik": { brand: "Huzur Yastık", tagline: "Penaltıda bile sakin kal.", note: "Uzatmalar dahil.", cta: "Sarıl", icon: "i-pillow", tone: "silver" },
+      "atasozu-rehberi": { brand: "Atasözü Rehberi", tagline: "Her pozisyona bir söz.", note: "Ofsayt dahil. Bulamazsak uydururuz.", cta: "Sayfayı aç", icon: "i-book", tone: "scarlet", serif: true },
+      "iki-taraf-atki": { brand: "İki Taraf Atkı", tagline: "Bir ucu bir takımın, öbür ucu öbürünün.", note: "Kimse kırılmasın diye.", cta: "Boynuna dola", icon: "i-scarf", tone: "bone" },
+      "onluk-bank": { brand: "Onluk Bank", tagline: "Cebinde on lira mı kaldı?", note: "Hiç olmasa daha az üzülürdün. Biz anlıyoruz.", cta: "Hesap aç", icon: "i-coin", tone: "red" },
     },
 
     // "BU ALAN KİRALIK" bannerları: İlkkan fotoğrafı + kiralık tabelası.
@@ -121,10 +121,10 @@ export const SEED = Object.freeze({
     rent: {
       href: "#iletisim",
       photos: [
-        { src: "assets/img/ilkkan-portre.jpg", focus: "50% 22%" },
-        { src: "assets/img/ilkkan-sahne.jpg", focus: "50% 24%" },
+        { src: "assets/img/ilkkan-portre.jpg", focus: "50% 26%" },
+        { src: "assets/img/ilkkan-sahne.jpg", focus: "50% 22%" },
       ],
-      tones: ["mint", "coral", "lilac", "moon"],
+      tones: ["red", "scarlet", "silver", "bone"],
       copies: [
         { brand: "Bu alan kiralık", tagline: "Markanız burada, İlkkan'ın hemen yanında.", note: "İlkkan kimseye kızmaz. Reklamınıza da kızmaz.", cta: "Hemen kirala" },
         { brand: "Reklamınız burada", tagline: "İlkkan baktı: burası boş.", note: "Olsun dedi. Ama dolsa daha güzel olur.", cta: "İletişime geç" },

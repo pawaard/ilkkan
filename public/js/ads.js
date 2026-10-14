@@ -46,7 +46,7 @@ function pick(slot) {
 
 function creativeHTML(id) {
   const c = ADS.creatives[id];
-  const classes = `adc adc--${esc(c.tone || "mint")}${c.serif ? " adc--serif" : ""}`;
+  const classes = `adc adc--${esc(c.tone || "red")}${c.serif ? " adc--serif" : ""}`;
   return `<a class="${classes}" href="${esc(c.href || "#")}" data-ad-id="${esc(id)}" aria-label="${esc(t("ad.creativeLabel", { brand: c.brand, tagline: c.tagline }))}">
       <svg class="adc__icon" aria-hidden="true"><use href="#${esc(c.icon)}"></use></svg>
       <span class="adc__body">
@@ -65,7 +65,7 @@ function nextRent() {
   rentTurn += 1;
   return {
     copy: RENT.copies[n % RENT.copies.length],
-    tone: RENT.tones[n % RENT.tones.length] || "mint",
+    tone: RENT.tones[n % RENT.tones.length] || "red",
     photo: RENT.photos[n % RENT.photos.length] || { src: "", focus: "50% 20%" },
   };
 }

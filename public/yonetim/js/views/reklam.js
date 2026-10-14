@@ -36,7 +36,7 @@ function unitCard(u, stat) {
       ${textarea({ label: t("unit.code"), name: "code", value: u.code, rows: 5, hint: t("unit.codeHint"), attrs: 'spellcheck="false" maxlength="20000"' })}
     </div>
     <div class="unit__panel" data-for="off"><p class="field__hint">${t("unit.offInfo")}</p></div>
-    <footer class="unit__foot"><button class="btn-plain btn-plain--mint" type="submit">${t("common.save")}</button></footer>
+    <footer class="unit__foot"><button class="btn-plain btn-plain--red" type="submit">${t("common.save")}</button></footer>
   </form>`;
 }
 

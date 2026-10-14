@@ -97,7 +97,7 @@ function buildAds(db, images, lang) {
     clickNote: ads.clickNote || "",
     rent: {
       href: ads.rentHref || "#iletisim",
-      tones: ads.tones || ["mint"],
+      tones: ads.tones || ["red"],
       photos: images.rentPhotos || [],
       copies: getContentLang(db, "rentCopies", lang),
     },

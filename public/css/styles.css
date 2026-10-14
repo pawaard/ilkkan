@@ -2,8 +2,9 @@
    İLKKAN SPORTS — Çekirdek stiller
    Tokenlar · temel · skorbord · başlık · hero · butonlar
 
-   Görsel dil: gece yarısı salonu — lacivert zemin, sakin
-   nane yeşili ve lila "aura" ışıkları, eski tüplü televizyon.
+   Görsel dil: maç gecesi — simsiyah zemin, koyu kırmızı (crimson)
+   vurgular, kemik beyazı metin, eski tüplü televizyon. Ersoy'un sıcak
+   kehribarına akraba ama kendi rengi: kırmızı-siyah.
    Tipografi kuralı: İlkkan konuşuyorsa → Instrument Serif italik.
    Spor dili (skor, saat, başlık) → dar kesim Archivo.
    ====================================================== */
@@ -11,40 +12,41 @@
 :root {
   color-scheme: dark;
 
-  /* Zemin — gece yarısı laciverti */
-  --night: #0a0b16;
-  --dusk-950: #0d0e1b;
-  --dusk-900: #111326;
-  --dusk-850: #16182e;
-  --dusk-800: #1c1e38;
-  --dusk-700: #252845;
-  --dusk-600: #303456;
+  /* Zemin — hafif kırmızıya çalan siyah */
+  --night: #0c0a0a;
+  --coal-950: #110d0d;
+  --coal-900: #161111;
+  --coal-850: #1c1616;
+  --coal-800: #231b1b;
+  --coal-700: #2d2222;
+  --coal-600: #3b2c2c;
 
-  /* Metin — ay ışığı */
-  --moon: #eeebf7;
-  --moon-2: #c9c5df;
-  --muted: #9893b4;
-  --faint: #6e6a8c;
+  /* Metin — kemik beyazı */
+  --bone: #f3ece9;
+  --bone-2: #d6c8c4;
+  --muted: #a58f8a;
+  --faint: #776460;
 
-  /* Vurgular — nane (sakinlik), mercan (canlı), lila (aura) */
-  --mint: #7ee2b8;
-  --mint-hi: #a3f0cf;
-  --mint-ink: #06231a;
-  --coral: #ff5f6d;
-  --coral-text: #ff8590;
-  --lilac: #a99cff;
+  /* Vurgular — kırmızı (ana), parlak kırmızı (canlı), gümüş */
+  --red: #e3253a;
+  --red-hi: #ff3f53;
+  --red-ink: #fff5f3; /* kırmızı zemin üstündeki yazı */
+  --ink: #170c0d;     /* açık zemin üstündeki yazı */
+  --scarlet: #ff3b4e;
+  --scarlet-text: #ff707d;
+  --silver: #c8c0bf;
   --sub: #fff3b0;
 
   /* Kategori renkleri (anlamsal) */
-  --c-futbol: #7ee2b8;
+  --c-futbol: #ff4d5e;
   --c-basketbol: #ff9a5c;
-  --c-voleybol: #a99cff;
-  --c-kanal: #6cc8ff;
+  --c-voleybol: #9db4d0;
+  --c-kanal: #c8c0bf;
 
   /* Çizgiler */
-  --line: rgba(238, 235, 247, 0.08);
-  --line-2: rgba(238, 235, 247, 0.14);
-  --line-3: rgba(238, 235, 247, 0.24);
+  --line: rgba(243, 236, 233, 0.08);
+  --line-2: rgba(243, 236, 233, 0.14);
+  --line-3: rgba(243, 236, 233, 0.24);
 
   /* Tipografi */
   /* Bahnschrift: Windows'ta dar kesim (wdth) destekleyen yedek — font yüklenmezse başlıklar yine dar kalır */
@@ -87,10 +89,10 @@ body {
   font-family: var(--sans);
   font-size: 16px;
   line-height: 1.55;
-  color: var(--moon);
+  color: var(--bone);
   background:
-    radial-gradient(1100px 640px at 90% -6%, rgba(169, 156, 255, 0.13), transparent 62%),
-    radial-gradient(900px 640px at -12% 8%, rgba(169, 156, 255, 0.09), transparent 60%),
+    radial-gradient(1100px 640px at 90% -6%, rgba(180, 20, 38, 0.13), transparent 62%),
+    radial-gradient(900px 640px at -12% 8%, rgba(180, 20, 38, 0.09), transparent 60%),
     var(--night);
   -webkit-font-smoothing: antialiased;
   font-synthesis-weight: none; /* Instrument Serif tek kalınlık: sahte kalın çizilmesin */
@@ -106,8 +108,8 @@ b, strong { font-weight: 700; }
 p { text-wrap: pretty; }
 h1, h2, h3 { text-wrap: balance; }
 
-:focus-visible { outline: 2px solid var(--mint); outline-offset: 3px; }
-::selection { background: var(--mint); color: var(--mint-ink); }
+:focus-visible { outline: 2px solid var(--red); outline-offset: 3px; }
+::selection { background: var(--red); color: var(--red-ink); }
 
 .wrap {
   width: 100%;
@@ -125,7 +127,7 @@ h1, h2, h3 { text-wrap: balance; }
 .skip-link {
   position: absolute; left: 12px; top: -64px; z-index: 300;
   padding: 10px 14px; border-radius: 8px;
-  background: var(--mint); color: var(--mint-ink); font-weight: 700;
+  background: var(--red); color: var(--red-ink); font-weight: 700;
   transition: top 0.2s var(--ease);
 }
 .skip-link:focus { top: 12px; }
@@ -156,13 +158,13 @@ h1, h2, h3 { text-wrap: balance; }
   width: 8px; height: 8px;
   border-radius: 50%;
   flex-shrink: 0;
-  background: var(--coral);
+  background: var(--scarlet);
   animation: ping 1.6s var(--ease) infinite;
 }
 @keyframes ping {
-  0%   { box-shadow: 0 0 0 0 rgba(255, 95, 109, 0.55); }
-  70%  { box-shadow: 0 0 0 7px rgba(255, 95, 109, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(255, 95, 109, 0); }
+  0%   { box-shadow: 0 0 0 0 rgba(255, 59, 78, 0.55); }
+  70%  { box-shadow: 0 0 0 7px rgba(255, 59, 78, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 59, 78, 0); }
 }
 
 @keyframes marquee { to { transform: translateX(-50%); } }
@@ -180,8 +182,8 @@ h1, h2, h3 { text-wrap: balance; }
   align-items: stretch;
   height: 36px;
   background:
-    radial-gradient(rgba(126, 226, 184, 0.08) 1px, transparent 1.4px) 0 0 / 4px 4px,
-    #06070f;
+    radial-gradient(rgba(227, 37, 58, 0.08) 1px, transparent 1.4px) 0 0 / 4px 4px,
+    #070505;
   border-bottom: 1px solid var(--line);
   font-size: 13.5px;
   font-weight: 700;
@@ -193,16 +195,16 @@ h1, h2, h3 { text-wrap: balance; }
 .scoreboard__label {
   display: flex; align-items: center; gap: 8px;
   padding: 0 14px;
-  background: var(--mint);
-  color: var(--mint-ink);
+  background: var(--red);
+  color: var(--red-ink);
   font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   white-space: nowrap;
   transition: background 0.2s;
 }
-.scoreboard__label:hover { background: var(--mint-hi); }
-.scoreboard__label:focus-visible { outline: 2px solid var(--mint-ink); outline-offset: -5px; }
+.scoreboard__label:hover { background: var(--red-hi); }
+.scoreboard__label:focus-visible { outline: 2px solid var(--red-ink); outline-offset: -5px; }
 .pause-glyph { width: 8px; height: 9px; border-inline: 2.5px solid currentColor; opacity: 0.7; }
 .scoreboard__label[aria-pressed="true"] .pause-glyph {
   width: 0; height: 0;
@@ -215,8 +217,8 @@ h1, h2, h3 { text-wrap: balance; }
 .motion-paused .tape__track { animation-play-state: paused; }
 .led {
   width: 7px; height: 7px; border-radius: 50%;
-  background: var(--coral);
-  box-shadow: 0 0 6px var(--coral);
+  background: var(--scarlet);
+  box-shadow: 0 0 6px var(--scarlet);
   animation: blink 1.4s steps(2) infinite;
 }
 @keyframes blink { 50% { opacity: 0.25; } }
@@ -231,8 +233,8 @@ h1, h2, h3 { text-wrap: balance; }
 .scoreboard__track {
   display: flex;
   width: max-content;
-  color: var(--mint);
-  text-shadow: 0 0 10px rgba(126, 226, 184, 0.45);
+  color: var(--red);
+  text-shadow: 0 0 10px rgba(227, 37, 58, 0.45);
   animation: marquee var(--dur, 60s) linear infinite;
 }
 .scoreboard__window:hover .scoreboard__track { animation-play-state: paused; }
@@ -242,8 +244,8 @@ h1, h2, h3 { text-wrap: balance; }
   padding-right: 38px;
   white-space: nowrap;
 }
-.tick b { color: var(--moon); font-weight: 800; }
-.tick__min { color: var(--coral-text); }
+.tick b { color: var(--bone); font-weight: 800; }
+.tick__min { color: var(--scarlet-text); }
 .tick--note {
   font-family: var(--serif);
   font-style: italic;
@@ -253,7 +255,7 @@ h1, h2, h3 { text-wrap: balance; }
   letter-spacing: 0.01em;
   text-transform: none;
   text-shadow: none;
-  color: var(--moon-2);
+  color: var(--bone-2);
 }
 .tick--note::before {
   content: "İlkkan:";
@@ -263,13 +265,13 @@ h1, h2, h3 { text-wrap: balance; }
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--mint);
+  color: var(--red);
 }
 .scoreboard__clock {
   display: flex; align-items: center;
   padding: 0 14px;
   border-left: 1px solid var(--line);
-  color: var(--moon);
+  color: var(--bone);
   letter-spacing: 0.1em;
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
@@ -282,7 +284,7 @@ h1, h2, h3 { text-wrap: balance; }
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(10, 11, 22, 0.82);
+  background: rgba(12, 10, 10, 0.82);
   -webkit-backdrop-filter: blur(14px) saturate(1.2);
           backdrop-filter: blur(14px) saturate(1.2);
   border-bottom: 1px solid var(--line);
@@ -295,7 +297,7 @@ h1, h2, h3 { text-wrap: balance; }
 }
 
 .brand { display: inline-flex; align-items: center; gap: 10px; flex-shrink: 0; }
-.brand__crest { width: 38px; height: 38px; color: var(--moon); }
+.brand__crest { width: 38px; height: 38px; color: var(--bone); }
 .brand:hover .brand__crest { animation: sway 1.2s var(--ease); }
 .brand__lockup { display: flex; flex-direction: column; line-height: 0.86; }
 .brand__name {
@@ -304,7 +306,7 @@ h1, h2, h3 { text-wrap: balance; }
   font-weight: 800;
   font-size: 27px;
   letter-spacing: -0.02em;
-  color: var(--moon);
+  color: var(--bone);
 }
 .brand__sports {
   margin-top: 4px;
@@ -314,7 +316,7 @@ h1, h2, h3 { text-wrap: balance; }
   font-stretch: 75%;
   letter-spacing: 0.44em;
   text-transform: uppercase;
-  color: var(--mint);
+  color: var(--red);
 }
 
 .nav { display: flex; gap: clamp(14px, 2.2vw, 30px); }
@@ -323,7 +325,7 @@ h1, h2, h3 { text-wrap: balance; }
   padding: 8px 0;
   font-size: 15px;
   font-weight: 600;
-  color: var(--moon-2);
+  color: var(--bone-2);
   white-space: nowrap;
   transition: color 0.2s;
 }
@@ -331,12 +333,12 @@ h1, h2, h3 { text-wrap: balance; }
   content: "";
   position: absolute; left: 50%; bottom: -1px;
   width: 5px; height: 5px; border-radius: 50%;
-  background: var(--mint);
+  background: var(--red);
   transform: translateX(-50%) scale(0);
   transition: transform 0.3s var(--ease-back);
 }
 .nav__link:hover,
-.nav__link.is-active { color: var(--moon); }
+.nav__link.is-active { color: var(--bone); }
 .nav__link:hover::after,
 .nav__link.is-active::after { transform: translateX(-50%) scale(1); }
 
@@ -349,21 +351,21 @@ h1, h2, h3 { text-wrap: balance; }
   border: 1px solid var(--line-2);
   border-radius: 999px;
   font-size: 13px;
-  color: var(--moon-2);
+  color: var(--bone-2);
   white-space: nowrap;
 }
-.live-pill b { color: var(--moon); font-variant-numeric: tabular-nums; }
+.live-pill b { color: var(--bone); font-variant-numeric: tabular-nums; }
 
 .icon-btn {
   width: 38px; height: 38px;
   display: grid; place-items: center;
   border: 1px solid var(--line-2);
   border-radius: 12px;
-  color: var(--moon-2);
+  color: var(--bone-2);
   transition: color 0.2s, background 0.2s, transform 0.25s var(--ease);
 }
 .icon-btn svg { width: 17px; height: 17px; }
-.icon-btn:hover { color: var(--moon); background: rgba(238, 235, 247, 0.06); transform: translateY(-1px); }
+.icon-btn:hover { color: var(--bone); background: rgba(243, 236, 233, 0.06); transform: translateY(-1px); }
 
 /* Dil anahtarı (TR | EN): diğer dildeki aynı sayfaya gider; mobilde de görünür */
 .lang-switch {
@@ -376,10 +378,10 @@ h1, h2, h3 { text-wrap: balance; }
   font-weight: 800;
   font-stretch: 75%;
   letter-spacing: 0.12em;
-  color: var(--moon-2);
+  color: var(--bone-2);
   transition: color 0.2s, background 0.2s, border-color 0.2s;
 }
-.lang-switch:hover { color: var(--mint-ink); background: var(--mint); border-color: var(--mint); }
+.lang-switch:hover { color: var(--red-ink); background: var(--red); border-color: var(--red); }
 
 .burger {
   display: none;
@@ -388,7 +390,7 @@ h1, h2, h3 { text-wrap: balance; }
   border: 1px solid var(--line-2);
   border-radius: 12px;
 }
-.burger span { width: 18px; height: 2px; border-radius: 2px; background: var(--moon); transition: transform 0.3s var(--ease); }
+.burger span { width: 18px; height: 2px; border-radius: 2px; background: var(--bone); transition: transform 0.3s var(--ease); }
 .burger[aria-expanded="true"] span:first-child { transform: translateY(4px) rotate(45deg); }
 .burger[aria-expanded="true"] span:last-child { transform: translateY(-4px) rotate(-45deg); }
 
@@ -407,8 +409,8 @@ h1, h2, h3 { text-wrap: balance; }
 .btn--ticket {
   padding: 15px 26px 15px 28px;
   border-radius: 10px;
-  background: var(--mint);
-  color: var(--mint-ink);
+  background: var(--red);
+  color: var(--red-ink);
   box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.16);
   -webkit-mask:
     radial-gradient(circle 7px at 0 50%, #0000 97%, #000) left / 51% 100% no-repeat,
@@ -417,16 +419,16 @@ h1, h2, h3 { text-wrap: balance; }
     radial-gradient(circle 7px at 0 50%, #0000 97%, #000) left / 51% 100% no-repeat,
     radial-gradient(circle 7px at 100% 50%, #0000 97%, #000) right / 51% 100% no-repeat;
 }
-.btn--ticket:hover { background: var(--mint-hi); transform: translateY(-2px); }
-.btn--ticket:focus-visible { outline: none; box-shadow: inset 0 0 0 3px var(--mint-ink); }
+.btn--ticket:hover { background: var(--red-hi); transform: translateY(-2px); }
+.btn--ticket:focus-visible { outline: none; box-shadow: inset 0 0 0 3px var(--red-ink); }
 .btn--sm { padding: 11px 18px 11px 20px; font-size: 14px; }
 
 .btn--ghost {
   padding: 12px 2px;
   border-bottom: 1px solid var(--line-3);
-  color: var(--moon);
+  color: var(--bone);
 }
-.btn--ghost:hover { color: var(--mint); border-color: var(--mint); }
+.btn--ghost:hover { color: var(--red); border-color: var(--red); }
 
 /* ======================================================
    HERO
@@ -447,7 +449,7 @@ h1, h2, h3 { text-wrap: balance; }
   position: absolute; z-index: -1;
   right: -4%; top: -6%;
   width: 52%; height: 110%;
-  background: radial-gradient(closest-side, rgba(169, 156, 255, 0.2), transparent);
+  background: radial-gradient(closest-side, rgba(180, 20, 38, 0.2), transparent);
   filter: blur(34px);
   pointer-events: none;
 }
@@ -463,8 +465,8 @@ h1, h2, h3 { text-wrap: balance; }
 .kicker__ep {
   padding: 5px 9px 4px;
   border-radius: 4px;
-  background: var(--mint);
-  color: var(--mint-ink);
+  background: var(--red);
+  color: var(--red-ink);
   font-weight: 800;
   font-stretch: 75%;
   letter-spacing: 0.12em;
@@ -482,7 +484,7 @@ h1, h2, h3 { text-wrap: balance; }
   line-height: 0.86;
   letter-spacing: -0.015em;
   text-transform: uppercase;
-  color: var(--moon);
+  color: var(--bone);
 }
 .js .hero__line { white-space: nowrap; } /* JS ölçüp sığdırır → kelime asla ortadan bölünmez */
 .hero__line--gibi { position: relative; align-self: flex-start; text-transform: none; }
@@ -496,7 +498,7 @@ h1, h2, h3 { text-wrap: balance; }
   font-size: 1.14em;
   line-height: 1;
   letter-spacing: -0.03em;
-  color: var(--mint);
+  color: var(--red);
 }
 .scribble {
   position: absolute;
@@ -507,7 +509,7 @@ h1, h2, h3 { text-wrap: balance; }
 }
 .scribble path {
   fill: none;
-  stroke: var(--mint);
+  stroke: var(--red);
   stroke-width: 5;
   stroke-linecap: round;
   stroke-dasharray: 400;
@@ -521,7 +523,7 @@ h1, h2, h3 { text-wrap: balance; }
   margin-top: 30px;
   font-size: clamp(1.02rem, 1.25vw, 1.18rem);
   line-height: 1.6;
-  color: var(--moon-2);
+  color: var(--bone-2);
 }
 
 .hero__cta {
@@ -543,11 +545,11 @@ h1, h2, h3 { text-wrap: balance; }
   font-size: 14.5px;
   line-height: 1.4;
 }
-.notes svg { width: 20px; height: 20px; margin-top: 1px; color: var(--mint); }
-.notes b { display: block; color: var(--moon); }
+.notes svg { width: 20px; height: 20px; margin-top: 1px; color: var(--red); }
+.notes b { display: block; color: var(--bone); }
 .notes i {
   font-family: var(--serif);
-  color: var(--moon-2);
+  color: var(--bone-2);
 }
 
 /* Hero açılış koreografisi */
@@ -589,14 +591,14 @@ h1, h2, h3 { text-wrap: balance; }
   position: absolute; left: 50%; bottom: 0;
   width: 34px; height: 12px;
   border-radius: 12px 12px 0 0;
-  background: var(--dusk-700);
+  background: var(--coal-700);
   translate: -50% 0;
 }
 .tv__antenna i {
   position: absolute; left: 50%; bottom: 6px;
   width: 3px; height: 60px;
   border-radius: 3px;
-  background: linear-gradient(var(--moon-2), var(--faint));
+  background: linear-gradient(var(--bone-2), var(--faint));
   transform-origin: 50% 100%;
 }
 .tv__antenna i::before {
@@ -604,8 +606,8 @@ h1, h2, h3 { text-wrap: balance; }
   position: absolute; left: 50%; top: -4px;
   width: 8px; height: 8px;
   border-radius: 50%;
-  background: var(--mint);
-  box-shadow: 0 0 10px rgba(126, 226, 184, 0.8);
+  background: var(--red);
+  box-shadow: 0 0 10px rgba(227, 37, 58, 0.8);
   translate: -50% 0;
 }
 .tv__antenna i:first-child { rotate: -32deg; }
@@ -615,13 +617,13 @@ h1, h2, h3 { text-wrap: balance; }
   position: relative;
   padding: 18px 18px 0;
   border-radius: 30px;
-  background: linear-gradient(165deg, #2c2f52 0%, #1a1c34 58%, #121427 100%);
+  background: linear-gradient(165deg, #302424 0%, #1d1616 58%, #120e0e 100%);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.09),
     inset 0 -14px 30px rgba(0, 0, 0, 0.35),
-    0 0 0 1px rgba(238, 235, 247, 0.05),
+    0 0 0 1px rgba(243, 236, 233, 0.05),
     0 50px 80px -40px rgba(0, 0, 0, 0.95),
-    0 0 90px -20px rgba(169, 156, 255, 0.35);
+    0 0 90px -20px rgba(180, 20, 38, 0.35);
 }
 .tv__screen {
   position: relative;
@@ -629,7 +631,7 @@ h1, h2, h3 { text-wrap: balance; }
   overflow: hidden;
   border-radius: 26px / 30px; /* tüp ekran kavisi */
   background: #000;
-  box-shadow: 0 0 0 4px #07080f, 0 0 0 7px rgba(238, 235, 247, 0.06);
+  box-shadow: 0 0 0 4px #080606, 0 0 0 7px rgba(243, 236, 233, 0.06);
 }
 .tv__screen img {
   width: 100%; height: 100%;
@@ -664,8 +666,8 @@ h1, h2, h3 { text-wrap: balance; }
   font-weight: 800;
   font-stretch: 75%;
   letter-spacing: 0.14em;
-  color: var(--mint);
-  text-shadow: 0 0 6px rgba(126, 226, 184, 0.8), 1px 1px 0 #000;
+  color: var(--red);
+  text-shadow: 0 0 6px rgba(227, 37, 58, 0.8), 1px 1px 0 #000;
   font-variant-numeric: tabular-nums;
 }
 
@@ -707,13 +709,13 @@ h1, h2, h3 { text-wrap: balance; }
   font-style: italic;
   font-size: 19px;
   line-height: 1;
-  color: var(--moon-2);
+  color: var(--bone-2);
 }
 .tv__knobs { display: flex; gap: 10px; }
 .tv__knobs i {
   width: 22px; height: 22px;
   border-radius: 50%;
-  background: radial-gradient(circle at 35% 30%, #4a4e7a, #191b30 70%);
+  background: radial-gradient(circle at 35% 30%, #5a4444, #1c1414 70%);
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08), 0 2px 4px rgba(0, 0, 0, 0.5);
   position: relative;
 }
@@ -722,7 +724,7 @@ h1, h2, h3 { text-wrap: balance; }
   position: absolute; left: 50%; top: 3px;
   width: 2px; height: 7px;
   border-radius: 2px;
-  background: var(--mint);
+  background: var(--red);
   translate: -50% 0;
 }
 .tv__knobs i:last-child { rotate: 120deg; }
@@ -732,7 +734,7 @@ h1, h2, h3 { text-wrap: balance; }
   position: absolute;
   bottom: -34px; left: -52px; /* televizyonun sol alt köşesine yapıştırılmış (ekranı kapatmaz) */
   width: 128px; height: 128px;
-  color: var(--coral);
+  color: var(--scarlet);
   opacity: 0.92;
   rotate: -14deg;
   pointer-events: none;
@@ -766,7 +768,7 @@ h1, h2, h3 { text-wrap: balance; }
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--mint);
+  color: var(--red);
 }
 .sec-title {
   margin-top: 12px;
@@ -785,7 +787,7 @@ h1, h2, h3 { text-wrap: balance; }
   font-stretch: normal;
   letter-spacing: -0.02em;
   text-transform: none;
-  color: var(--mint);
+  color: var(--red);
 }
 .sec-note {
   max-width: 36ch;
@@ -793,7 +795,7 @@ h1, h2, h3 { text-wrap: balance; }
   font-style: italic;
   font-size: 16px;
   line-height: 1.5;
-  color: var(--moon-2);
+  color: var(--bone-2);
 }
 
 /* Kaydırınca beliren öğeler (yalnızca JS varsa gizlenir) */
@@ -819,7 +821,7 @@ h1, h2, h3 { text-wrap: balance; }
     flex-direction: column;
     gap: 0;
     padding: 4px var(--gutter) 18px;
-    background: rgba(10, 11, 22, 0.97);
+    background: rgba(12, 10, 10, 0.97);
     border-bottom: 1px solid var(--line);
   }
   .nav.is-open { display: flex; }

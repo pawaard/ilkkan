@@ -218,7 +218,7 @@ export default Object.freeze({
   "texts.subtitles": "Televizyon altyazıları",
   "texts.subtitlesWhere": "Tanıtımdaki eski televizyonda dönen iki satırlık diyaloglar.",
   "texts.quotes": "“İlkkan diyor ki” bandı",
-  "texts.quotesWhere": "Tanıtımın altındaki nane yeşili kayan bant.",
+  "texts.quotesWhere": "Tanıtımın altındaki kırmızı kayan bant.",
   "texts.liveComments": "Oynatıcı alt bant yorumları",
   "texts.liveCommentsWhere": "Yayın açıkken ekranın altında dönen yorumlar (6 sn'de bir).",
   "texts.commentary": "Canlı anlatım",

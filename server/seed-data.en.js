@@ -100,7 +100,7 @@ export const SEED_EN = Object.freeze({
   },
   derby: { prediction: "My prediction: 1–1. A point each, so nobody's sad." },
   images: {
-    heroAlt: "İlkkan, a character from the series Gibi.",
-    cardAlt: "İlkkan, a character from the series Gibi.",
+    heroAlt: "A still from the series Gibi: bald, bearded İlkkan sits in an armchair holding a blue mug.",
+    cardAlt: "A still from the series Gibi: bald, bearded İlkkan in a striped shirt sits on a sofa with a faint smile.",
   },
 });

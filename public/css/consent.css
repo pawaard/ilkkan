@@ -11,8 +11,8 @@
   border: 1px solid var(--line-3);
   border-radius: var(--r-lg);
   background:
-    linear-gradient(120deg, rgba(126, 226, 184, 0.08), transparent 55%),
-    var(--dusk-800);
+    linear-gradient(120deg, rgba(227, 37, 58, 0.08), transparent 55%),
+    var(--coal-800);
   box-shadow: 0 30px 70px -24px rgba(0, 0, 0, 0.95);
   transform: translateX(-50%);
   animation: consent-in 0.5s var(--ease) both;
@@ -33,9 +33,9 @@
   font-style: italic;
   font-size: 15px;
   line-height: 1.45;
-  color: var(--moon-2);
+  color: var(--bone-2);
 }
-.consent__text a { color: var(--mint); text-decoration: underline; text-underline-offset: 3px; }
+.consent__text a { color: var(--red); text-decoration: underline; text-underline-offset: 3px; }
 
 .consent__actions { display: flex; flex-wrap: wrap; gap: 10px; }
 .consent__btn {
@@ -45,10 +45,10 @@
   font-weight: 700;
   transition: background 0.2s, color 0.2s, border-color 0.2s;
 }
-.consent__btn--no { border: 1px solid var(--line-3); color: var(--moon); }
-.consent__btn--no:hover { border-color: var(--moon-2); }
-.consent__btn--yes { background: var(--mint); color: var(--mint-ink); }
-.consent__btn--yes:hover { background: var(--mint-hi); }
+.consent__btn--no { border: 1px solid var(--line-3); color: var(--bone); }
+.consent__btn--no:hover { border-color: var(--bone-2); }
+.consent__btn--yes { background: var(--red); color: var(--red-ink); }
+.consent__btn--yes:hover { background: var(--red-hi); }
 
 .has-anchor .consent { bottom: 84px; }
 

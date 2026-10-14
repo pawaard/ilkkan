@@ -218,7 +218,7 @@ export default Object.freeze({
   "texts.subtitles": "TV subtitles",
   "texts.subtitlesWhere": "Two-line dialogues rotating on the old TV in the intro.",
   "texts.quotes": "“İlkkan says” strip",
-  "texts.quotesWhere": "The scrolling mint strip below the intro.",
+  "texts.quotesWhere": "The scrolling red strip below the intro.",
   "texts.liveComments": "Player lower-third comments",
   "texts.liveCommentsWhere": "Comments cycling at the bottom while the stream plays (every 6 s).",
   "texts.commentary": "Live commentary",

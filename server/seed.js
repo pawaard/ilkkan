@@ -62,8 +62,8 @@ export const SEED_SITE = Object.freeze({
   contactNote: "Bize Telegram'dan yaz. İlkkan cevaplar — kimseyi kırmadan.",
 });
 export const SEED_ALTS = Object.freeze({
-  heroAlt: "Gibi dizisinin karakteri İlkkan.",
-  cardAlt: "Gibi dizisinin karakteri İlkkan.",
+  heroAlt: "Gibi dizisinden bir kare: kel ve sakallı İlkkan, elinde mavi bir kupayla koltukta oturuyor.",
+  cardAlt: "Gibi dizisinden bir kare: çizgili gömlekli, kel ve sakallı İlkkan kanepede oturmuş, hafifçe gülümsüyor.",
 });
 
 function insertSettings(db) {
@@ -76,7 +76,7 @@ function insertSettings(db) {
     hero: IMG.sahne,
     card: IMG.portre,
     ...SEED_ALTS,
-    rentPhotos: [{ src: IMG.portre, focus: "50% 22%" }, { src: IMG.sahne, focus: "50% 24%" }],
+    rentPhotos: [{ src: IMG.portre, focus: "50% 26%" }, { src: IMG.sahne, focus: "50% 22%" }],
   });
   setSetting(db, "ads", {
     creatives: SEED.ads.creatives,

@@ -16,10 +16,10 @@
   border-radius: 999px;
   font-size: 14px;
   font-weight: 600;
-  color: var(--moon-2);
+  color: var(--bone-2);
   transition: color 0.2s, border-color 0.2s;
 }
-.page-back:hover { color: var(--moon); border-color: var(--mint); }
+.page-back:hover { color: var(--bone); border-color: var(--red); }
 
 .page { padding-block: clamp(28px, 5vw, 64px) clamp(56px, 8vw, 110px); }
 
@@ -29,9 +29,9 @@
   font-size: 13.5px;
   color: var(--muted);
 }
-.crumbs a { color: var(--moon-2); transition: color 0.2s; }
-.crumbs a:hover { color: var(--mint); }
-.crumbs [aria-current] { color: var(--moon); }
+.crumbs a { color: var(--bone-2); transition: color 0.2s; }
+.crumbs a:hover { color: var(--red); }
+.crumbs [aria-current] { color: var(--bone); }
 
 /* ---------- Maç kartı: büyük bilet ---------- */
 .match {
@@ -43,8 +43,8 @@
   border: 1px solid var(--line-2);
   border-radius: var(--r-lg);
   background:
-    radial-gradient(700px 300px at 50% -10%, rgba(169, 156, 255, 0.14), transparent 70%),
-    var(--dusk-900);
+    radial-gradient(700px 300px at 50% -10%, rgba(180, 20, 38, 0.14), transparent 70%),
+    var(--coal-900);
   text-align: center;
   box-shadow: var(--shadow);
 }
@@ -61,7 +61,7 @@
 }
 .match::before { left: -14px; }
 .match::after { right: -14px; }
-.match--derby { border-color: rgba(126, 226, 184, 0.45); }
+.match--derby { border-color: rgba(227, 37, 58, 0.45); }
 
 .match__league {
   display: inline-flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px 10px;
@@ -69,10 +69,10 @@
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--moon-2);
+  color: var(--bone-2);
 }
 .match__dot { width: 9px; height: 9px; border-radius: 50%; background: var(--dot); }
-.match__derby { color: var(--mint); letter-spacing: 0.08em; }
+.match__derby { color: var(--red); letter-spacing: 0.08em; }
 
 .match__chip {
   display: inline-flex; align-items: center; gap: 8px;
@@ -83,9 +83,9 @@
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
-.match__chip[data-status="live"] { background: rgba(255, 95, 109, 0.14); color: var(--coral-text); }
-.match__chip[data-status="upcoming"] { background: rgba(126, 226, 184, 0.12); color: var(--mint); }
-.match__chip[data-status="finished"] { background: rgba(238, 235, 247, 0.08); color: var(--moon-2); }
+.match__chip[data-status="live"] { background: rgba(255, 59, 78, 0.14); color: var(--scarlet-text); }
+.match__chip[data-status="upcoming"] { background: rgba(227, 37, 58, 0.12); color: var(--red); }
+.match__chip[data-status="finished"] { background: rgba(243, 236, 233, 0.08); color: var(--bone-2); }
 .match__chip:not([data-status="live"]) .pulse { display: none; }
 
 .match__teams {
@@ -106,8 +106,8 @@
 .match__score {
   padding: 10px clamp(14px, 2.4vw, 24px);
   border-radius: 12px;
-  background: var(--mint);
-  color: var(--mint-ink);
+  background: var(--red);
+  color: var(--red-ink);
   font-size: clamp(2rem, 6vw, 4.2rem);
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
@@ -135,7 +135,7 @@
   font-weight: 600;
   font-stretch: normal;
   text-transform: none;
-  color: var(--mint);
+  color: var(--red);
 }
 .others__list {
   display: grid;
@@ -153,7 +153,7 @@
   border: 1px solid var(--line);
   border-left: 3px solid var(--dot);
   border-radius: 12px;
-  background: var(--dusk-900);
+  background: var(--coal-900);
   transition: border-color 0.2s, transform 0.25s var(--ease);
 }
 .other:hover { border-color: var(--line-3); transform: translateY(-2px); }
@@ -163,12 +163,12 @@
   font-weight: 800;
   font-stretch: 75%;
   text-align: center;
-  color: var(--mint);
+  color: var(--red);
 }
-.other__state[data-status="live"] { color: var(--coral-text); }
+.other__state[data-status="live"] { color: var(--scarlet-text); }
 .other__state[data-status="finished"] { color: var(--muted); }
 .other__teams { grid-area: teams; overflow: hidden; font-weight: 700; white-space: nowrap; text-overflow: ellipsis; }
-.other__teams b { color: var(--mint); }
+.other__teams b { color: var(--red); }
 .other__league { grid-area: league; font-size: 12.5px; color: var(--muted); }
 
 /* ---------- Yasal metinler ---------- */
@@ -183,17 +183,17 @@
   text-transform: uppercase;
 }
 .legal p,
-.legal li { margin-top: 10px; color: var(--moon-2); }
+.legal li { margin-top: 10px; color: var(--bone-2); }
 .legal ul { padding-left: 20px; list-style: disc; }
-.legal li::marker { color: var(--mint); }
-.legal b { color: var(--moon); }
+.legal li::marker { color: var(--red); }
+.legal b { color: var(--bone); }
 .legal mark {
   padding: 0 4px;
   border-radius: 4px;
   background: rgba(255, 243, 176, 0.18);
   color: var(--sub);
 }
-.legal code { font-size: 0.92em; color: var(--mint); }
+.legal code { font-size: 0.92em; color: var(--red); }
 .legal__note {
   padding: 14px 16px;
   border: 1px dashed rgba(255, 243, 176, 0.4);
@@ -216,15 +216,15 @@
   font-weight: 800;
   font-stretch: 75%;
   line-height: 0.85;
-  color: var(--dusk-700); /* kontur (text-stroke) değişken fontun iç çizgilerini gösteriyor; düz dolgu */
+  color: var(--coal-700); /* kontur (text-stroke) değişken fontun iç çizgilerini gösteriyor; düz dolgu */
 }
-.lost__code span { color: var(--mint); }
+.lost__code span { color: var(--red); }
 .lost__ilkkan {
   max-width: 40ch;
   font-family: var(--serif);
   font-style: italic;
   font-size: 18px;
-  color: var(--moon-2);
+  color: var(--bone-2);
 }
 .lost__ilkkan span { display: block; margin-top: 4px; font-size: 14px; color: var(--muted); }
 .lost__cta { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px 24px; margin-top: 14px; }
@@ -240,7 +240,7 @@
 .page-foot__inner p { max-width: 62ch; }
 .page-foot__nav { display: flex; flex-wrap: wrap; gap: 8px 18px; }
 .page-foot__nav a { text-decoration: underline; text-decoration-color: var(--line-3); text-underline-offset: 3px; }
-.page-foot__nav a:hover { color: var(--moon); }
+.page-foot__nav a:hover { color: var(--bone); }
 
 @media (max-width: 560px) {
   .page-back { padding: 8px 12px; font-size: 13px; }

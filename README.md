@@ -10,7 +10,7 @@ Site, skorlar, kanallar, reklam alanları ve metinler panelden yönetilir; skor 
 |---|---|---|
 | **Karakter** | Fazla detaycı, her şeyi iki kere sayar | Sakin, uzlaşmacı, atasözüyle konuşur, hep beş parasız |
 | **Slogan** | Tribündeymişsin gibi. | Herkes kazanmış gibi. |
-| **Renkler** | Sıcak siyah + kehribar + domates | Gece laciverti + nane yeşili + lila + mercan |
+| **Renkler** | Sıcak kahve-siyah + kehribar + domates | Simsiyah + koyu kırmızı (crimson) + kemik beyazı + gümüş |
 | **Yazı tipleri** | Bricolage Grotesque + Fraunces | Archivo (dar kesim) + Instrument Serif |
 | **Tanıtım** | Film karesi + altyazı | Antenli eski tüplü televizyon + altyazı |
 | **Afiş** | Neon tel kafes | Dönen "aura" halkaları |
@@ -156,12 +156,12 @@ data/              SQLite veritabanı (git dışı)
 
 ## Görseller (İlkkan fotoğrafları)
 
-Sitede şu an İlkkan için **yer tutucu görseller** var (aura halkalı siluet). Gerçek fotoğrafları iki yoldan koyabilirsin:
+Sitedeki İlkkan görselleri, EXXEN'in resmî YouTube kanalındaki *Gibi* kliplerinden alınmış karelerdir (kanepede gülümseyen ve elinde kupayla koltukta oturan İlkkan); hakları yapımcıya aittir. Yayına çıkmadan önce lisanslı ya da izinli görseller kullanman önerilir.
+
+Değiştirmek için iki yol var:
 
 1. **Panelden (önerilen):** *Ayarlar › Görseller* bölümünden afiş (sol/sağ), tanıtım televizyonu, oyuncu kartı ve kiralık banner fotoğraflarını tek tek yükle. Görsel açıklamalarını (alt metin) da oradan güncelle.
 2. **Dosya olarak:** `public/assets/img/` klasöründeki dosyaların yerine aynı adla koy:
-   - `ilkkan-portre.jpg` — dik portre (yaklaşık 420×590): oyuncu kartı, sol afiş, kiralık bannerlar
-   - `ilkkan-sahne.jpg` — uzun dikey kare (yaklaşık 830×1478): tanıtımdaki televizyon, sağ afiş
+   - `ilkkan-portre.jpg` — dik portre (513×720): oyuncu kartı, sol afiş, kiralık bannerlar
+   - `ilkkan-sahne.jpg` — uzun dikey kare (405×720): tanıtımdaki televizyon, sağ afiş
    - `og.jpg` / `og-en.jpg` — 1200×630 paylaşım kartları (Türkçe / İngilizce)
-
-Dizi karelerinin hakları yapımcıya aittir; yayına çıkmadan önce lisanslı ya da izinli görseller kullanman önerilir.

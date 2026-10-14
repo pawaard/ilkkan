@@ -30,8 +30,8 @@
   border: 1px dashed var(--line-2);
   border-radius: 10px;
   background:
-    repeating-linear-gradient(135deg, rgba(238, 235, 247, 0.03) 0 10px, transparent 10px 20px),
-    var(--dusk-850);
+    repeating-linear-gradient(135deg, rgba(243, 236, 233, 0.03) 0 10px, transparent 10px 20px),
+    var(--coal-850);
 }
 
 /* IAB standart ölçüler */
@@ -76,11 +76,11 @@
    KREATİF — vintage baskı reklamı
    ====================================================== */
 .adc {
-  --bg: var(--mint);
-  --fg: var(--mint-ink);
-  --accent: var(--mint-ink);
-  --cta-bg: var(--mint-ink);
-  --cta-fg: var(--mint);
+  --bg: var(--red);
+  --fg: var(--red-ink);
+  --accent: var(--red-ink);
+  --cta-bg: var(--red-ink);
+  --cta-fg: #b51d2d;
   position: absolute; inset: 0;
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   gap: 3cqmin;
@@ -103,9 +103,9 @@
 .adc:hover { filter: brightness(1.06) saturate(1.05); }
 .adc:focus-visible { outline: 3px solid var(--fg); outline-offset: -9px; }
 
-.adc--coral { --bg: #c23a52; --fg: var(--moon); --accent: var(--mint-hi); --cta-bg: var(--moon); --cta-fg: #8e2335; }
-.adc--lilac { --bg: #2b2466; --fg: var(--moon); --accent: #c4baff; --cta-bg: #c4baff; --cta-fg: #17114a; }
-.adc--moon { --bg: #e9e6f5; --fg: var(--mint-ink); --accent: #c23a52; --cta-bg: #c23a52; --cta-fg: #f8f6ff; }
+.adc--scarlet { --bg: #7d0f1c; --fg: var(--bone); --accent: var(--red-hi); --cta-bg: var(--bone); --cta-fg: #5c0a14; }
+.adc--silver { --bg: #2a2222; --fg: var(--bone); --accent: #d9d1cf; --cta-bg: #d9d1cf; --cta-fg: #1a0f10; }
+.adc--bone { --bg: #f0e8e3; --fg: var(--ink); --accent: var(--red); --cta-bg: var(--red); --cta-fg: var(--red-ink); }
 
 .adc__icon {
   --crest-ring: currentColor;
@@ -174,10 +174,10 @@
 .adc__tag {
   position: absolute; left: 50%; bottom: -10%;
   padding: 0.1em 0.45em;
-  border: 2px solid #d6404f;
+  border: 2px solid #b51d2d;
   border-radius: 4px;
-  background: #f7f5ff;
-  color: #d6404f;
+  background: #fbf5f2;
+  color: #b51d2d;
   font-size: calc(var(--m) * 0.17);
   font-weight: 800;
   font-stretch: 75%;
@@ -336,7 +336,7 @@
   padding: 6px 6px 6px 8px;
   border: 1px solid var(--line-2);
   border-radius: 14px;
-  background: rgba(10, 11, 22, 0.94);
+  background: rgba(12, 10, 10, 0.94);
   box-shadow: var(--shadow);
   transform: translateX(-50%);
 }
@@ -347,11 +347,11 @@
   flex-shrink: 0;
   border: 1px solid var(--line-2);
   border-radius: 50%;
-  color: var(--moon-2);
+  color: var(--bone-2);
   font-size: 18px;
   line-height: 1;
 }
-.ad__close:hover { color: var(--moon); background: rgba(238, 235, 247, 0.08); }
+.ad__close:hover { color: var(--bone); background: rgba(243, 236, 233, 0.08); }
 @media (max-width: 760px) {
   .ad--anchor { display: flex; }
   .has-anchor body { padding-bottom: 78px; }
@@ -364,7 +364,7 @@
    ====================================================== */
 .tick--ad {
   gap: 8px;
-  color: var(--moon);
+  color: var(--bone);
   font-weight: 600;
   letter-spacing: 0.01em;
   text-shadow: none;
@@ -373,18 +373,18 @@
 .tick--ad::before {
   content: "Reklam";
   padding: 1px 6px;
-  border: 1px solid rgba(169, 156, 255, 0.6);
+  border: 1px solid rgba(180, 20, 38, 0.6);
   border-radius: 4px;
   font-size: 10px;
   font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #c4baff;
+  color: #d9d1cf;
 }
 :lang(en) .tick--ad::before { content: "Ad"; }
 
 .idle__sponsor { display: inline-flex; align-items: center; gap: 8px; margin-top: 4px; font-size: 12px; color: var(--muted); }
-.idle__sponsor b { font-weight: 700; color: var(--moon-2); }
+.idle__sponsor b { font-weight: 700; color: var(--bone-2); }
 .idle__sponsor-label {
   padding: 1px 6px;
   border: 1px solid var(--line-3);
@@ -396,19 +396,19 @@
 }
 
 .chan--ad {
-  --dot: var(--mint);
-  border: 1px dashed rgba(126, 226, 184, 0.5);
+  --dot: var(--red);
+  border: 1px dashed rgba(227, 37, 58, 0.5);
   background:
-    radial-gradient(rgba(126, 226, 184, 0.09) 1px, transparent 1.4px) 0 0 / 6px 6px,
-    linear-gradient(160deg, rgba(126, 226, 184, 0.12), var(--dusk-900));
+    radial-gradient(rgba(227, 37, 58, 0.09) 1px, transparent 1.4px) 0 0 / 6px 6px,
+    linear-gradient(160deg, rgba(227, 37, 58, 0.12), var(--coal-900));
 }
-.chan--ad .chan__no { -webkit-text-stroke-color: rgba(126, 226, 184, 0.3); }
+.chan--ad .chan__no { -webkit-text-stroke-color: rgba(227, 37, 58, 0.3); }
 .chan__adcta {
   margin-top: 10px;
   padding: 7px 12px;
   border-radius: 999px;
-  background: var(--mint);
-  color: var(--mint-ink);
+  background: var(--red);
+  color: var(--red-ink);
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.06em;
@@ -428,7 +428,7 @@
   display: block;
   width: 100%; height: 100%;
   padding: 0;
-  background: var(--dusk-900);
+  background: var(--coal-900);
 }
 .adc--image img {
   width: 100%; height: 100%;
