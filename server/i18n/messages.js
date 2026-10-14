@@ -1,0 +1,116 @@
+// Yönetim API'sinin mesajları: Türkçe / İngilizce (panel X-Lang başlığıyla dilini bildirir)
+import { requestLang } from "./index.js";
+
+const MESSAGES = Object.freeze({
+  tr: {
+    // API
+    "badOrigin": "Geçersiz istek kaynağı.",
+    "tooManyLogins": "Çok fazla hatalı deneme. 15 dakika sonra tekrar dene.",
+    "badLogin": "Kullanıcı adı ya da şifre yanlış.",
+    "badCurrentPassword": "Mevcut şifre yanlış.",
+    "noSession": "Oturum yok ya da süresi doldu. Tekrar giriş yap.",
+    "badCsrf": "Güvenlik doğrulaması başarısız. Sayfayı yenileyip tekrar dene.",
+    "tooManyRequests": "Çok fazla istek. Biraz bekleyip tekrar dene.",
+    "notFound": "Bulunamadı.",
+    "idTaken.match": "\"{id}\" kimliğiyle bir maç zaten var.",
+    "idTaken.channel": "\"{id}\" kimliğiyle bir kanal zaten var.",
+    "matchNotFound": "Maç bulunamadı.",
+    "matchIsDerby": "Bu maç derbi olarak seçili. Önce Ayarlar › Derbi'den başka bir maç seç.",
+    "linkedMatchNotFound": "Bağlı maç bulunamadı.",
+    "channelNotFound": "Kanal bulunamadı.",
+    "noSuchContent": "Böyle bir metin listesi yok.",
+    "adNotFound": "Reklam alanı bulunamadı.",
+    "derbyNotFound": "Seçilen derbi maçı bulunamadı.",
+    "noSuchSponsor": "Böyle bir sponsor yok.",
+    "noSuchSetting": "Böyle bir ayar yok.",
+    "fileUnreadable": "Dosya okunamadı.",
+    "fileTooBig": "Dosya çok büyük. En fazla 1 MB.",
+    "fileType": "Yalnızca PNG, JPG ya da WebP görsel yüklenebilir.",
+    "tooManyFiles": "En fazla {max} görsel yüklenebilir. Hesap › Yüklenen görseller bölümünden kullanılmayanları sil.",
+    "badFileName": "Geçersiz dosya adı.",
+    "fileNotFound": "Dosya bulunamadı.",
+    "payloadTooLarge": "Gönderilen veri çok büyük.",
+    "badRequest": "İstek okunamadı. Gönderilen veriyi kontrol et.",
+    "serverError": "Sunucuda bir hata oldu. Olsun, sakin kalalım.",
+    // Doğrulama
+    "v.required": "boş bırakılamaz",
+    "v.max": "en fazla {n} karakter olabilir",
+    "v.id": "küçük harf, rakam ve tire kullan (ör. gs-fb)",
+    "v.time": "SS:DD biçiminde olmalı (ör. 20:00)",
+    "v.stream": "https:// ile başlayan geçerli bir yayın adresi olmalı",
+    "v.external": "https:// ile başlayan geçerli bir adres olmalı",
+    "v.link": "#bolum, https://… ya da mailto:… olmalı",
+    "v.image": "/uploads/… , /assets/img/… ya da https:// ile başlayan bir görsel adresi olmalı",
+    "v.atLeastOne": "en az bir alan gönder",
+    "v.channelNo": "1–3 haneli kanal numarası olmalı (ör. 04)",
+    "v.codeMax": "reklam kodu en fazla 20.000 karakter olabilir",
+    "v.imageMode": "görsel modunda bir görsel seçmelisin",
+    "v.codeMode": "kod modunda reklam kodunu yapıştırmalısın",
+    "v.focus": "odak \"50% 20%\" biçiminde olmalı",
+    "v.currentPassword": "mevcut şifreni yaz",
+    "v.passwordMin": "yeni şifre en az {n} karakter olmalı",
+    "v.tooBig": "dosya çok büyük (en fazla 1 MB)",
+    "v.row": "{n}. satır",
+  },
+  en: {
+    "badOrigin": "Invalid request origin.",
+    "tooManyLogins": "Too many failed attempts. Try again in 15 minutes.",
+    "badLogin": "Wrong username or password.",
+    "badCurrentPassword": "Current password is wrong.",
+    "noSession": "No session, or it has expired. Please sign in again.",
+    "badCsrf": "Security check failed. Refresh the page and try again.",
+    "tooManyRequests": "Too many requests. Wait a moment and try again.",
+    "notFound": "Not found.",
+    "idTaken.match": "A match with the ID \"{id}\" already exists.",
+    "idTaken.channel": "A channel with the ID \"{id}\" already exists.",
+    "matchNotFound": "Match not found.",
+    "matchIsDerby": "This match is selected as the derby. Pick another match in Settings › Derby first.",
+    "linkedMatchNotFound": "Linked match not found.",
+    "channelNotFound": "Channel not found.",
+    "noSuchContent": "No such text list.",
+    "adNotFound": "Ad space not found.",
+    "derbyNotFound": "The selected derby match was not found.",
+    "noSuchSponsor": "No such sponsor.",
+    "noSuchSetting": "No such setting.",
+    "fileUnreadable": "The file couldn't be read.",
+    "fileTooBig": "The file is too big. 1 MB maximum.",
+    "fileType": "Only PNG, JPG or WebP images can be uploaded.",
+    "tooManyFiles": "You can upload at most {max} images. Delete unused ones in Account › Uploaded images.",
+    "badFileName": "Invalid file name.",
+    "fileNotFound": "File not found.",
+    "payloadTooLarge": "The data you sent is too large.",
+    "badRequest": "The request couldn't be read. Check the data you sent.",
+    "serverError": "Something went wrong on the server. That's fine, let's stay calm.",
+    "v.required": "can't be empty",
+    "v.max": "can be at most {n} characters",
+    "v.id": "use lowercase letters, digits and dashes (e.g. gs-fb)",
+    "v.time": "must be HH:MM (e.g. 20:00)",
+    "v.stream": "must be a valid stream address starting with https://",
+    "v.external": "must be a valid address starting with https://",
+    "v.link": "must be #section, https://… or mailto:…",
+    "v.image": "must be an image address starting with /uploads/…, /assets/img/… or https://",
+    "v.atLeastOne": "send at least one field",
+    "v.channelNo": "must be a 1–3 digit channel number (e.g. 04)",
+    "v.codeMax": "ad code can be at most 20,000 characters",
+    "v.imageMode": "image mode needs an image",
+    "v.codeMode": "code mode needs the ad code",
+    "v.focus": "focus must look like \"50% 20%\"",
+    "v.currentPassword": "enter your current password",
+    "v.passwordMin": "the new password must be at least {n} characters",
+    "v.tooBig": "file is too big (1 MB maximum)",
+    "v.row": "row {n}",
+  },
+});
+
+const fill = (text, vars) => text.replace(/\{(\w+)\}/g, (_, k) => (Object.hasOwn(vars, k) ? String(vars[k]) : `{${k}}`));
+
+/** Dile göre mesaj; bilinmeyen anahtar olduğu gibi döner */
+export function message(lang, key, vars = {}) {
+  const table = MESSAGES[lang] || MESSAGES.tr;
+  return fill(table[key] ?? MESSAGES.tr[key] ?? key, vars);
+}
+
+/** İsteğin diline göre mesaj (panel X-Lang başlığı) */
+export const msg = (req, key, vars = {}) => message(requestLang(req), key, vars);
+
+export const MESSAGE_KEYS = Object.freeze({ tr: Object.keys(MESSAGES.tr), en: Object.keys(MESSAGES.en) });

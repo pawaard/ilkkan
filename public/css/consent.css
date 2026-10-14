@@ -1,0 +1,62 @@
+/* ======================================================
+   İLKKAN SPORTS — Çerez onay bandı
+   Yalnızca panelde "reklam kodu" modunda alan varken çıkar.
+   ====================================================== */
+.consent {
+  position: fixed; left: 50%; bottom: 18px; z-index: 120;
+  width: min(calc(100% - 32px), 760px);
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+  gap: 14px 22px;
+  padding: 18px 20px;
+  border: 1px solid var(--line-3);
+  border-radius: var(--r-lg);
+  background:
+    linear-gradient(120deg, rgba(126, 226, 184, 0.08), transparent 55%),
+    var(--dusk-800);
+  box-shadow: 0 30px 70px -24px rgba(0, 0, 0, 0.95);
+  transform: translateX(-50%);
+  animation: consent-in 0.5s var(--ease) both;
+}
+@keyframes consent-in { from { opacity: 0; transform: translate(-50%, 24px); } }
+
+.consent__body { flex: 1 1 340px; min-width: 0; }
+.consent__title {
+  font-size: 19px;
+  font-weight: 800;
+  font-stretch: 75%;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+.consent__text {
+  margin-top: 4px;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 15px;
+  line-height: 1.45;
+  color: var(--moon-2);
+}
+.consent__text a { color: var(--mint); text-decoration: underline; text-underline-offset: 3px; }
+
+.consent__actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.consent__btn {
+  padding: 11px 18px;
+  border-radius: 999px;
+  font-size: 14.5px;
+  font-weight: 700;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.consent__btn--no { border: 1px solid var(--line-3); color: var(--moon); }
+.consent__btn--no:hover { border-color: var(--moon-2); }
+.consent__btn--yes { background: var(--mint); color: var(--mint-ink); }
+.consent__btn--yes:hover { background: var(--mint-hi); }
+
+.has-anchor .consent { bottom: 84px; }
+
+@media (max-width: 520px) {
+  .consent { bottom: 12px; padding: 16px; }
+  .consent__actions { width: 100%; }
+  .consent__btn { flex: 1 1 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .consent { animation: none; }
+}

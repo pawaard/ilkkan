@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="{{LANG}}">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{TITLE}}</title>
+  <meta name="description" content="{{DESCRIPTION}}" />
+  <link rel="canonical" href="{{CANONICAL}}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="{{SITE_NAME}}" />
+  <meta property="og:locale" content="{{OG_LOCALE}}" />
+  <meta property="og:locale:alternate" content="{{OG_LOCALE_ALT}}" />
+  <link rel="alternate" hreflang="tr" href="{{URL_TR}}" />
+  <link rel="alternate" hreflang="en" href="{{URL_EN}}" />
+  <link rel="alternate" hreflang="x-default" href="{{URL_TR}}" />
+  <meta property="og:title" content="{{TITLE}}" />
+  <meta property="og:description" content="{{DESCRIPTION}}" />
+  <meta property="og:url" content="{{CANONICAL}}" />
+  <meta property="og:image" content="{{OG_IMAGE}}" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">{{{JSONLD}}}</script>
+  <meta name="theme-color" content="#0a0b16" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='19' fill='%230b0c18'/%3E%3Cg fill='none' stroke='%237ee2b8' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M13.6 11.5h12.8c-.4 4-2.8 6.1-3 9.5-.2 3 2.2 4.6 2.2 7.4H14.4c0-2.8 2.4-4.4 2.2-7.4-.2-3.4-2.6-5.5-3-9.5z'/%3E%3Cpath d='M10.5 31h19'/%3E%3C/g%3E%3C/svg%3E" />
+  <!-- Fontlar siteye gömülü (Google'a bağlantı yok). ?v= sunucu tarafından dosya değişince otomatik artar -->
+  <link rel="preload" href="/assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/css/fonts.css?v={{V}}" />
+  <link rel="stylesheet" href="/css/styles.css?v={{V}}" />
+  <link rel="stylesheet" href="/css/broadcast.css?v={{V}}" />
+  <link rel="stylesheet" href="/css/poster.css?v={{V}}" />
+  <link rel="stylesheet" href="/css/sections.css?v={{V}}" />
+  <link rel="stylesheet" href="/css/ads.css?v={{V}}" />
+  <link rel="stylesheet" href="/css/consent.css?v={{V}}" />
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+  <!-- İkon sprite -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="i-play" viewBox="0 0 24 24"><path fill="currentColor" d="M8 5.2v13.6a.8.8 0 0 0 1.2.7l10.6-6.8a.8.8 0 0 0 0-1.4L9.2 4.5A.8.8 0 0 0 8 5.2z"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></symbol>
+    <symbol id="i-tg" viewBox="0 0 24 24"><path fill="currentColor" d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m20 20-4.6-4.6"/></g></symbol>
+    <symbol id="i-full" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M3.5 12.8c2.2 1.6 3.9 3.6 5.2 6 2.9-6.2 6.6-10.7 11.8-14.3"/></symbol>
+    <symbol id="i-rewind" viewBox="0 0 24 24"><path fill="currentColor" d="M11.5 6.3v11.4a.6.6 0 0 1-1 .5L3.3 12.5a.6.6 0 0 1 0-1l7.2-5.7a.6.6 0 0 1 1 .5zm9 0v11.4a.6.6 0 0 1-1 .5l-7.2-5.7a.6.6 0 0 1 0-1l7.2-5.7a.6.6 0 0 1 1 .5z"/></symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M6 16V11a6 6 0 1 1 12 0v5l1.5 2h-15zM10 20.5a2.2 2.2 0 0 0 4 0"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></g></symbol>
+    <!-- Afiş: fotoğrafın çevresinde dönen "aura" halkaları (ortası boş, yüzü kapatmaz) ve tıklama imleci -->
+    <symbol id="i-aura" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="45.6" fill="none" stroke="currentColor" stroke-width="1.8" />
+      <circle cx="50" cy="50" r="48.8" fill="none" stroke="currentColor" stroke-width="1.1" stroke-dasharray="1.2 4.4" stroke-linecap="round" />
+      <g fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"><path d="M50 1.2A48.8 48.8 0 0 1 93.4 27.6" /><path d="M6.6 72.4A48.8 48.8 0 0 0 35.4 96.6" /></g>
+      <g fill="currentColor"><path d="M88.6 8.6l1.5 3.9 3.9 1.5-3.9 1.5-1.5 3.9-1.5-3.9-3.9-1.5 3.9-1.5z" /><path d="M9.4 26l1.1 2.8 2.8 1.1-2.8 1.1-1.1 2.8-1.1-2.8-2.8-1.1 2.8-1.1z" /><path d="M84 86.4l1 2.4 2.4 1-2.4 1-1 2.4-1-2.4-2.4-1 2.4-1z" /></g>
+    </symbol>
+    <symbol id="i-cursor" viewBox="0 0 24 24"><path fill="currentColor" stroke="#06231a" stroke-width="1" stroke-linejoin="round" d="M8.5 5v14.2l3.5-3.3 2.5 5.4 2.6-1.2-2.5-5.3h5z" /><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" d="M5.6 3.1 6.7 4.6M3.2 7h1.9M3.9 3.9l1.2 1" /></symbol>
+
+    <!-- Reklam ikonları -->
+    <symbol id="i-tea" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6.5h8l-.6 3.4c-.3 1.5-.2 2.6.5 4l.7 1.6c.6 1.4-.4 2.5-2 2.5h-3.2c-1.6 0-2.6-1.1-2-2.5l.7-1.6c.7-1.4.8-2.5.5-4z"/><path d="M8.7 10.2h6.6M4.5 21h15M10.5 4c-.6-.7.6-1.3 0-2M13.5 4c-.6-.7.6-1.3 0-2"/></g></symbol>
+    <symbol id="i-pillow" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4.2 6.5c5.2 1.3 10.4 1.3 15.6 0-1 3.7-1 7.3 0 11-5.2-1.3-10.4-1.3-15.6 0 1-3.7 1-7.3 0-11z"/><path d="M9 12h6"/></g></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6.4C10 5 7 4.6 3.5 5v13c3.5-.4 6.5 0 8.5 1.4 2-1.4 5-1.8 8.5-1.4V5C17 4.6 14 5 12 6.4zM12 6.4v13"/></g></symbol>
+    <symbol id="i-scarf" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4.5c3.6 2 8.4 2 12 0l-1.4 4.6c-2.9 1.4-6.3 1.4-9.2 0z"/><path d="M8.6 9.4 7 20.2l3.6-1.4.8-8.8M15.4 9.4 17 20.2l-3.6-1.4-.8-8.8"/></g></symbol>
+    <symbol id="i-coin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.2"/><circle cx="12" cy="12" r="5.4"/><path d="M10.6 9.6v4.8l2.8-2.4"/></g></symbol>
+    <symbol id="i-mega" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.2v3.6l3 .4 9.5 4.6V5.2L7 9.8z"/><path d="M7 14.2 8.4 19h2.3l-1.1-4.4M19.2 9.6c.9.8.9 4 0 4.8"/></g></symbol>
+    <symbol id="i-crest" viewBox="0 0 40 40"><circle cx="20" cy="20" r="18.6" fill="none" stroke-width="1.2" style="stroke: var(--crest-ring, currentColor); stroke-opacity: .4"/><g fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="stroke: var(--crest-wire, #7ee2b8)"><path d="M13.6 11.5h12.8c-.4 4-2.8 6.1-3 9.5-.2 3 2.2 4.6 2.2 7.4H14.4c0-2.8 2.4-4.4 2.2-7.4-.2-3.4-2.6-5.5-3-9.5z"/><path d="M14.5 15h11M10.6 31h18.8M18 8.6c-.7-.9.7-1.6 0-2.6M22 8.6c-.7-.9.7-1.6 0-2.6"/></g></symbol>
+  </svg>
+
+  <a class="skip-link" href="#canli">{{t:skip}}</a>
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- ============ SKORBORD ============ -->
+  <div class="scoreboard" id="top" role="region" aria-label="{{t:scoreboard.region}}">
+    <button class="scoreboard__label" id="motionToggle" type="button" aria-pressed="false" aria-label="{{t:scoreboard.pause}}" title="{{t:scoreboard.pauseTitle}}"><i class="led" aria-hidden="true"></i>{{t:scoreboard.label}}<i class="pause-glyph" aria-hidden="true"></i></button>
+    <div class="scoreboard__window">
+      <div class="scoreboard__track" id="ticker"></div>
+    </div>
+    <p class="scoreboard__clock"><span class="sr-only">{{t:scoreboard.clock}}</span><time id="clock">--:--:--</time></p>
+  </div>
+
+  <!-- ============ MASTHEAD ============ -->
+  <header class="masthead">
+    <div class="masthead__inner wrap">
+      <a class="brand" href="#top" aria-label="{{t:brand.home}}">
+        <svg class="brand__crest" aria-hidden="true"><use href="#i-crest" /></svg>
+        <span class="brand__lockup">
+          <span class="brand__name">İlkkan</span>
+          <span class="brand__sports">Sports</span>
+        </span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="{{t:nav.label}}">
+        <a class="nav__link is-active" href="#canli">{{t:nav.live}}</a>
+        <a class="nav__link" href="#fikstur">{{t:nav.fixtures}}</a>
+        <a class="nav__link" href="#kanallar">{{t:nav.channels}}</a>
+        <a class="nav__link" href="#kose">{{t:nav.corner}}</a>
+        <a class="nav__link" href="#iletisim">{{t:nav.contact}}</a>
+      </nav>
+
+      <div class="masthead__actions">
+        <p class="live-pill"><i class="pulse" aria-hidden="true"></i><b data-live-count>0</b>&nbsp;{{t:livePill}}</p>
+        <a class="icon-btn" href="{{X_URL}}" target="_blank" rel="noopener" aria-label="X (Twitter)" {{X_HIDDEN}}><svg aria-hidden="true"><use href="#i-x" /></svg></a>
+        <a class="icon-btn" href="{{TG_URL}}" target="_blank" rel="noopener" aria-label="Telegram" {{TG_HIDDEN}}><svg aria-hidden="true"><use href="#i-tg" /></svg></a>
+        <a class="lang-switch" href="{{ALT_URL}}" hreflang="{{ALT_LANG}}" lang="{{ALT_LANG}}" title="{{t:lang.switchTitle}}"><span class="sr-only">{{t:lang.switchLabel}} </span>{{ALT_LANG_LABEL}}</a>
+        <button class="burger" id="burger" type="button" aria-label="{{t:nav.open}}" aria-expanded="false" aria-controls="nav">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ REKLAM: üst banner (970×90 · mobil 320×100) ============ -->
+  <div class="ad-row ad-row--top wrap">
+    <aside class="ad ad--leaderboard" aria-label="{{t:ad.region}}">
+      <span class="ad__label">{{t:ad.label}}</span>
+      <div class="ad__frame" data-ad-slot="ust-banner" data-ad-no="01"></div>
+    </aside>
+  </div>
+
+  <main>
+    <!-- ============ CANLI YAYIN + FİKSTÜR (ilk girişte görünür) ============ -->
+    <section class="broadcast wrap" id="canli" aria-labelledby="canli-title">
+      <header class="sec-head">
+        <div>
+          <p class="eyebrow"><i class="pulse" aria-hidden="true"></i>{{t:live.eyebrow}}</p>
+          <h1 class="sec-title" id="canli-title">{{{t:live.title}}}</h1>
+        </div>
+        <p class="sec-note">{{t:live.note}}</p>
+      </header>
+
+      <div class="broadcast__grid">
+        <div class="stage">
+        <!-- REKLAM: video üstü 4'lü banner (468×60) -->
+        <div class="ad-grid" role="group" aria-label="{{t:ad.gridRegion}}">
+          <span class="ad-grid__label">{{t:ad.gridLabel}}</span>
+          <aside class="ad ad--half" aria-label="{{t:ad.region}}"><div class="ad__frame" data-ad-slot="video-ust" data-ad-no="02"></div></aside>
+          <aside class="ad ad--half" aria-label="{{t:ad.region}}"><div class="ad__frame" data-ad-slot="video-ust" data-ad-no="03"></div></aside>
+          <aside class="ad ad--half" aria-label="{{t:ad.region}}"><div class="ad__frame" data-ad-slot="video-ust" data-ad-no="04"></div></aside>
+          <aside class="ad ad--half" aria-label="{{t:ad.region}}"><div class="ad__frame" data-ad-slot="video-ust" data-ad-no="05"></div></aside>
+        </div>
+
+        <!-- Oynatıcı -->
+        <div class="player" id="player">
+          <!-- Yayın adresi panelden girilir: .m3u8 → video (HLS), diğerleri → iframe. Adres yoksa saha görünümü. -->
+          <div class="player__screen" id="screen" data-state="idle">
+            <!-- Bekleme ekranı: İlkkan'lı "Yayın başlıyor" afişi -->
+            <div class="idle poster">
+              <span class="poster__beam poster__beam--l" aria-hidden="true"></span>
+              <span class="poster__beam poster__beam--r" aria-hidden="true"></span>
+
+              <div class="poster__top">
+                <div class="poster__meta">
+                  <p class="idle__league" id="idleLeague"></p>
+                  <p class="idle__sponsor" id="playerSponsor" hidden></p>
+                </div>
+                <p class="poster__brand" aria-hidden="true"><svg><use href="#i-crest" /></svg><span>İlkkan</span><b>Sports</b></p>
+              </div>
+
+              <figure class="poster__face poster__face--l" aria-hidden="true">
+                <span class="poster__photo"><img src="{{IMG_POSTER_L}}" width="210" height="295" alt="" decoding="async" /></span>
+                <svg class="poster__aura"><use href="#i-aura" /></svg>
+                <figcaption class="poster__name">İlkkan</figcaption>
+              </figure>
+
+              <div class="poster__center">
+                <p class="poster__headline" id="idleHeadline">{{t:poster.headline}}</p>
+                <p class="idle__match"><span id="idleHome"></span><em>vs</em><span id="idleAway"></span></p>
+                <button class="playbtn" id="playBtn" type="button" aria-label="{{t:poster.play}}">
+                  <svg class="playbtn__play" aria-hidden="true"><use href="#i-play" /></svg>
+                  <span id="playBtnLabel">{{t:poster.cta}}</span>
+                  <svg class="playbtn__cursor" aria-hidden="true"><use href="#i-cursor" /></svg>
+                </button>
+                <p class="idle__hint" id="idleHint">{{t:poster.hint}}</p>
+              </div>
+
+              <figure class="poster__face poster__face--r" aria-hidden="true">
+                <span class="poster__photo"><img src="{{IMG_POSTER_R}}" width="415" height="739" alt="" decoding="async" /></span>
+                <svg class="poster__aura"><use href="#i-aura" /></svg>
+                <figcaption class="poster__name">İlkkan</figcaption>
+              </figure>
+
+              <p class="poster__tagline" aria-hidden="true">{{{t:poster.tagline}}}</p>
+            </div>
+
+            <div class="leader" aria-hidden="true">
+              <span class="leader__sweep"></span>
+              <svg class="leader__rings" viewBox="0 0 200 200"><circle cx="100" cy="100" r="74" /><circle cx="100" cy="100" r="90" /><path d="M100 0v200M0 100h200" /></svg>
+              <span class="leader__num" id="leaderNum">3</span>
+            </div>
+
+            <div class="live" aria-hidden="true">
+              <svg class="pitch" viewBox="0 0 160 100" preserveAspectRatio="xMidYMid meet">
+                <rect x="6" y="6" width="148" height="88" rx="1" />
+                <path d="M80 6v88" />
+                <circle cx="80" cy="50" r="12" />
+                <circle cx="80" cy="50" r=".9" class="pitch__dot" />
+                <rect x="6" y="27" width="22" height="46" />
+                <rect x="132" y="27" width="22" height="46" />
+                <rect x="6" y="39" width="8" height="22" />
+                <rect x="146" y="39" width="8" height="22" />
+                <path d="M28 42a10 10 0 0 1 0 16M132 42a10 10 0 0 0 0 16" />
+              </svg>
+              <span class="ball"></span>
+              <div class="scorebug">
+                <span class="scorebug__team" id="sbHome">BJK</span>
+                <span class="scorebug__score" id="sbScore">1–0</span>
+                <span class="scorebug__team" id="sbAway">TS</span>
+                <span class="scorebug__clock" id="sbClock">34'</span>
+              </div>
+              <span class="live__badge"><i class="pulse"></i>{{t:player.liveBadge}}</span>
+              <div class="lower-third">
+                <span class="lower-third__who">İlkkan</span>
+                <span class="lower-third__text" id="ltText"></span>
+              </div>
+            </div>
+
+            <div class="static" aria-hidden="true"></div>
+          </div>
+          <p class="sr-only" id="playerStatus" aria-live="polite"></p>
+
+          <div class="player__bar">
+            <div class="now">
+              <span class="state-chip" id="nowChip" data-status="live"><i class="pulse"></i><span id="nowChipText">{{t:player.chip}}</span></span>
+              <div class="now__text">
+                <strong id="nowTitle">—</strong>
+                <small id="nowMeta">—</small>
+              </div>
+            </div>
+            <div class="controls">
+              <div class="seg" role="group" aria-label="{{t:player.source}}" data-seg="source">
+                <button class="seg__btn" type="button" aria-pressed="true" data-value="0">{{t:player.source1}}</button>
+                <button class="seg__btn" type="button" aria-pressed="false" data-value="1">{{t:player.source2}}</button>
+              </div>
+              <div class="seg" role="group" aria-label="{{t:player.quality}}" data-seg="quality">
+                <button class="seg__btn" type="button" aria-pressed="true" data-value="1080p">1080p</button>
+                <button class="seg__btn" type="button" aria-pressed="false" data-value="720p">720p</button>
+              </div>
+              <button class="icon-btn" id="fsBtn" type="button" aria-label="{{t:player.fullscreen}}"><svg aria-hidden="true"><use href="#i-full" /></svg></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- REKLAM: video altı 4'lü banner (468×60) -->
+        <div class="ad-grid" role="group" aria-label="{{t:ad.gridRegion}}">
+          <span class="ad-grid__label">{{t:ad.gridLabel}}</span>
+          <aside class="ad ad--half" aria-label="{{t:ad.region}}"><div class="ad__frame" data-ad-slot="video-alt" data-ad-no="06"></div></aside>
+          <aside class="ad ad--half" aria-label="{{t:ad.region}}"><div class="ad__frame" data-ad-slot="video-alt" data-ad-no="07"></div></aside>
+          <aside class="ad ad--half" aria-label="{{t:ad.region}}"><div class="ad__frame" data-ad-slot="video-alt" data-ad-no="08"></div></aside>
+          <aside class="ad ad--half" aria-label="{{t:ad.region}}"><div class="ad__frame" data-ad-slot="video-alt" data-ad-no="09"></div></aside>
+        </div>
+
+        <!-- Canlı anlatım -->
+        <section class="commentary" aria-labelledby="anlatim-title">
+          <header class="commentary__head">
+            <h3 class="commentary__title" id="anlatim-title"><i class="pulse" aria-hidden="true"></i>{{t:commentary.title}}</h3>
+            <p class="commentary__by">{{{t:commentary.by}}}</p>
+          </header>
+          <ol class="commentary__list" id="commentary"></ol>
+        </section>
+        </div>
+
+        <!-- Fikstür -->
+        <aside class="fixtures" id="fikstur" aria-labelledby="fikstur-title">
+          <div class="fixtures__head">
+            <h2 class="fixtures__title" id="fikstur-title">{{{t:fixtures.title}}}</h2>
+            <time class="fixtures__date" id="today"></time>
+          </div>
+
+          <div class="tabs" id="tabs" role="group" aria-label="{{t:fixtures.tabs}}"></div>
+
+          <label class="search">
+            <svg aria-hidden="true"><use href="#i-search" /></svg>
+            <span class="sr-only">{{t:fixtures.searchLabel}}</span>
+            <input id="search" type="search" placeholder="{{t:fixtures.searchPlaceholder}}" autocomplete="off" />
+          </label>
+
+          <ol class="tickets" id="tickets" aria-label="{{t:fixtures.list}}"></ol>
+          <p class="empty" id="empty" hidden>{{{t:fixtures.empty}}}</p>
+
+          <!-- REKLAM: fikstür kutusu (300×250) -->
+          <aside class="ad ad--mpu ad--in-panel" aria-label="{{t:ad.region}}">
+            <span class="ad__label">{{t:ad.label}}</span>
+            <div class="ad__frame" data-ad-slot="fikstur-kutu" data-ad-no="10"></div>
+          </aside>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============ REKLAM: yayın sonrası banner (970×90 · mobil 320×100) ============ -->
+    <div class="ad-row wrap">
+      <aside class="ad ad--leaderboard" aria-label="{{t:ad.region}}">
+        <span class="ad__label">{{t:ad.label}}</span>
+        <div class="ad__frame" data-ad-slot="yayin-sonrasi" data-ad-no="11"></div>
+      </aside>
+    </div>
+
+    <!-- ============ TANITIM (HERO) — ekrana girince açılış koreografisi oynar ============ -->
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div class="hero__copy">
+        <p class="kicker"><span class="kicker__ep">{{t:hero.episode}}</span>{{t:hero.kicker}}</p>
+
+        <h2 class="hero__title" id="hero-title">
+          <span class="hero__line">{{t:hero.line1}}</span>
+          <span class="hero__line hero__line--gibi">
+            <em>{{t:hero.line2}}</em>
+            <svg class="scribble" viewBox="0 0 300 30" preserveAspectRatio="none" aria-hidden="true"><path d="M5 19C58 7 112 27 168 15S262 6 295 17" /></svg>
+          </span>
+        </h2>
+
+        <p class="hero__lede">
+          {{t:hero.lede}}
+        </p>
+
+        <div class="hero__cta">
+          <a class="btn btn--ticket" href="#canli" data-action="watch">
+            {{t:hero.watch}}
+            <svg aria-hidden="true"><use href="#i-play" /></svg>
+          </a>
+          <a class="btn btn--ghost" href="#fikstur">{{t:hero.fixtures}} <span aria-hidden="true">→</span></a>
+        </div>
+
+        <ul class="notes" aria-label="{{t:hero.notes}}">
+          <li><svg aria-hidden="true"><use href="#i-check" /></svg><span>{{{t:hero.note1}}}</span></li>
+          <li><svg aria-hidden="true"><use href="#i-check" /></svg><span>{{{t:hero.note2}}}</span></li>
+          <li><svg aria-hidden="true"><use href="#i-check" /></svg><span><b><span data-live-count>0</span> {{{t:hero.note3}}}</span></li>
+        </ul>
+      </div>
+
+      <figure class="tv">
+        <span class="tv__antenna" aria-hidden="true"><i></i><i></i></span>
+        <div class="tv__set">
+          <div class="tv__screen">
+            <img src="{{IMG_HERO}}" width="415" height="739" loading="lazy" decoding="async" alt="{{IMG_HERO_ALT}}" />
+            <p class="tv__osd" aria-hidden="true"><span>AV-2 ▸ İLKKAN</span><span id="timecode">0:00:00</span></p>
+            <p class="subtitle" id="subtitle" aria-hidden="true"><span></span><span></span></p>
+          </div>
+          <div class="tv__panel" aria-hidden="true">
+            <span class="tv__grille"></span>
+            <span class="tv__label">İlkkan</span>
+            <span class="tv__knobs"><i></i><i></i></span>
+          </div>
+        </div>
+
+        <svg class="stamp" viewBox="0 0 140 140" aria-hidden="true">
+          <defs>
+            <path id="stampPath" d="M70 70m-51 0a51 51 0 1 1 102 0a51 51 0 1 1-102 0" />
+            <filter id="ink"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" result="n" /><feDisplacementMap in="SourceGraphic" in2="n" scale="2.6" /></filter>
+          </defs>
+          <g filter="url(#ink)">
+            <circle cx="70" cy="70" r="66" fill="none" stroke="currentColor" stroke-width="3" />
+            <circle cx="70" cy="70" r="37" fill="none" stroke="currentColor" stroke-width="1.6" />
+            <text class="stamp__ring" textLength="316" lengthAdjust="spacing"><textPath href="#stampPath">{{t:hero.stamp}}</textPath></text>
+            <path d="M54 71c4.5 3 8 6.6 10.6 11 5.7-11.4 12.6-19.4 21.8-25.6" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+          </g>
+        </svg>
+        <figcaption class="sr-only">{{t:hero.figcaption}}</figcaption>
+      </figure>
+    </section>
+
+    <!-- ============ İLKKAN DİYOR Kİ (bant) ============ -->
+    <section class="tape" aria-label="{{t:tape.label}}">
+      <div class="tape__band">
+        <div class="tape__track" id="tape"></div>
+      </div>
+    </section>
+
+    <!-- ============ KANALLAR ============ -->
+    <section class="channels wrap" id="kanallar" aria-labelledby="kanallar-title">
+      <header class="sec-head reveal">
+        <div>
+          <p class="eyebrow">İlkkan TV</p>
+          <h2 class="sec-title" id="kanallar-title">{{{t:channels.title}}}</h2>
+        </div>
+        <p class="sec-note">{{t:channels.note}}</p>
+      </header>
+      <div class="remote" id="channels"></div>
+    </section>
+
+    <!-- ============ İLKKAN'IN KÖŞESİ ============ -->
+    <section class="corner wrap" id="kose" aria-labelledby="kose-title">
+      <div class="corner__card reveal">
+        <div class="ilkkan-card-wrap">
+          <article class="ilkkan-card" id="ilkkanCard" aria-label="{{t:card.label}}">
+            <span class="ilkkan-card__shine" aria-hidden="true"></span>
+            <div class="ilkkan-card__head">
+              <div class="ilkkan-card__meta">
+                <p class="ilkkan-card__rating">97</p>
+                <p class="ilkkan-card__pos">{{t:card.position}}</p>
+                <svg class="ilkkan-card__crest" aria-hidden="true"><use href="#i-crest" /></svg>
+              </div>
+              <img class="ilkkan-card__photo" src="{{IMG_CARD}}" width="210" height="295" decoding="async" alt="{{IMG_CARD_ALT}}" />
+            </div>
+            <p class="ilkkan-card__name">İlkkan</p>
+            <dl class="ilkkan-card__stats">
+              <div><dt title="{{t:card.calmTitle}}">{{t:card.calm}}</dt><dd>99</dd></div>
+              <div><dt title="{{t:card.peaceTitle}}">{{t:card.peace}}</dt><dd>97</dd></div>
+              <div><dt title="{{t:card.proverbTitle}}">{{t:card.proverb}}</dt><dd>95</dd></div>
+              <div><dt title="{{t:card.loyalTitle}}">{{t:card.loyal}}</dt><dd>94</dd></div>
+              <div><dt title="{{t:card.budgetTitle}}">{{t:card.budget}}</dt><dd>12</dd></div>
+              <div><dt title="{{t:card.paceTitle}}">{{t:card.pace}}</dt><dd>38</dd></div>
+            </dl>
+            <p class="ilkkan-card__foot">{{t:card.foot}}</p>
+          </article>
+        </div>
+        <p class="corner__legend">{{t:card.legend}}</p>
+
+        <!-- REKLAM: köşe kutusu (300×250) -->
+        <aside class="ad ad--mpu" aria-label="{{t:ad.region}}">
+          <span class="ad__label">{{t:ad.label}}</span>
+          <div class="ad__frame" data-ad-slot="kose-kutu" data-ad-no="12"></div>
+        </aside>
+      </div>
+
+      <div class="corner__body reveal">
+        <p class="eyebrow">{{t:corner.eyebrow}}</p>
+        <h2 class="sec-title" id="kose-title">{{{t:corner.title}}}</h2>
+        <p class="corner__lede">
+          {{t:corner.lede}}
+        </p>
+
+        <article class="derby" aria-labelledby="derby-title">
+          <p class="derby__label"><svg aria-hidden="true"><use href="#i-crest" /></svg>{{t:derby.label}}</p>
+          <h3 class="derby__match" id="derby-title"><span id="derbyHome">Galatasaray</span><em>vs</em><span id="derbyAway">Fenerbahçe</span></h3>
+          <p class="derby__meta" id="derbyMeta">{{t:derby.meta}}</p>
+
+          <div class="countdown" role="timer" aria-label="{{t:derby.countdown}}">
+            <div><b id="cdH">00</b><span>{{t:derby.hours}}</span></div>
+            <div><b id="cdM">00</b><span>{{t:derby.minutes}}</span></div>
+            <div><b id="cdS">00</b><span>{{t:derby.seconds}}</span></div>
+          </div>
+          <p class="derby__aside">{{t:derby.aside}}</p>
+
+          <blockquote class="derby__quote">
+            <p id="derbyPrediction"></p>
+            <footer>{{t:derby.quoteFoot}}</footer>
+          </blockquote>
+
+          <div class="derby__actions">
+            <button class="btn btn--ghost btn--remind" id="remindBtn" type="button" aria-pressed="false">
+              <svg aria-hidden="true"><use href="#i-bell" /></svg><span>{{t:derby.remind}}</span>
+            </button>
+            <button class="btn btn--ghost btn--ics" id="icsBtn" type="button">
+              <svg aria-hidden="true"><use href="#i-clock" /></svg><span>{{t:derby.ics}}</span>
+            </button>
+          </div>
+        </article>
+      </div>
+    </section>
+    <!-- ============ REKLAM: alt billboard (970×250 · mobil 300×250) ============ -->
+    <div class="ad-row ad-row--billboard wrap">
+      <aside class="ad ad--billboard" aria-label="{{t:ad.region}}">
+        <span class="ad__label">{{t:ad.label}}</span>
+        <div class="ad__frame" data-ad-slot="alt-billboard" data-ad-no="13"></div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- ============ JENERİK (FOOTER) ============ -->
+  <footer class="credits" id="iletisim">
+    <div class="wrap credits__inner">
+      <div class="credits__brand reveal">
+        <a class="brand brand--lg" href="#top" aria-label="{{t:footer.top}}">
+          <svg class="brand__crest" aria-hidden="true"><use href="#i-crest" /></svg>
+          <span class="brand__lockup">
+            <span class="brand__name">İlkkan</span>
+            <span class="brand__sports">Sports</span>
+          </span>
+        </a>
+        <p class="credits__tagline">{{t:footer.tagline}}</p>
+        <p class="credits__contact">{{CONTACT_NOTE}}</p>
+        <div class="credits__social">
+          <a class="btn btn--ticket btn--sm" href="{{TG_URL}}" target="_blank" rel="noopener" {{TG_HIDDEN}}><svg aria-hidden="true"><use href="#i-tg" /></svg>{{t:footer.telegram}}</a>
+          <a class="icon-btn" href="{{X_URL}}" target="_blank" rel="noopener" aria-label="X (Twitter)" {{X_HIDDEN}}><svg aria-hidden="true"><use href="#i-x" /></svg></a>
+        </div>
+      </div>
+
+      <div class="credits__roll reveal">
+        <h2 class="credits__title">{{t:footer.credits}}</h2>
+        <dl class="roll">
+          <div><dt>{{t:roll.production}}</dt><dd>İlkkan Sports</dd></div>
+          <div><dt>{{t:roll.director}}</dt><dd>İlkkan</dd></div>
+          <div><dt>{{t:roll.script}}</dt><dd>{{t:roll.scriptBy}}</dd></div>
+          <div><dt>{{t:roll.camera}}</dt><dd>{{t:roll.cameraBy}}</dd></div>
+          <div><dt>{{t:roll.scoreboard}}</dt><dd>{{t:roll.scoreboardBy}}</dd></div>
+          <div><dt>{{t:roll.costume}}</dt><dd>{{t:roll.costumeBy}}</dd></div>
+          <div><dt>{{t:roll.music}}</dt><dd>{{t:roll.musicBy}}</dd></div>
+          <div><dt>{{t:roll.thanks}}</dt><dd>{{t:roll.thanksBy}}</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="wrap credits__bottom">
+      <nav class="credits__nav" aria-label="{{t:footer.nav}}">
+        <a href="#canli">{{t:footer.navLive}}</a><a href="#fikstur">{{t:footer.navFixtures}}</a><a href="#kanallar">{{t:footer.navChannels}}</a><a href="#kose">{{t:footer.navCorner}}</a>
+      </nav>
+      <nav class="credits__legal-nav" aria-label="{{t:footer.legalNav}}">
+        <a href="{{URL_PRIVACY}}">{{t:footer.privacy}}</a><a href="{{URL_COOKIES}}">{{t:footer.cookies}}</a><a href="{{URL_TERMS}}">{{t:footer.terms}}</a>
+        <button type="button" data-consent-open>{{t:footer.consent}}</button>
+      </nav>
+      <p class="credits__legal">
+        {{t:footer.legal}}
+      </p>
+      <p class="credits__copy">© <span id="year"></span> İlkkan Sports</p>
+    </div>
+  </footer>
+
+  <!-- ============ REKLAM: yan raylar (160×600, yalnızca geniş ekranda) ============ -->
+  <aside class="ad ad--sky ad--rail ad--rail-left" aria-label="{{t:ad.region}}">
+    <span class="ad__label">{{t:ad.label}}</span>
+    <div class="ad__frame" data-ad-slot="sol-ray" data-ad-no="14"></div>
+  </aside>
+  <aside class="ad ad--sky ad--rail ad--rail-right" aria-label="{{t:ad.region}}">
+    <span class="ad__label">{{t:ad.label}}</span>
+    <div class="ad__frame" data-ad-slot="sag-ray" data-ad-no="15"></div>
+  </aside>
+
+  <!-- ============ REKLAM: mobil alt şerit (320×50, kapatılabilir) ============ -->
+  <aside class="ad ad--anchor" id="adAnchor" aria-label="{{t:ad.region}}">
+    <span class="ad__label">{{t:ad.label}}</span>
+    <div class="ad__frame" data-ad-slot="mobil-alt" data-ad-no="16"></div>
+    <button class="ad__close" type="button" aria-label="{{t:ad.close}}">×</button>
+  </aside>
+
+  <a class="rewind" id="rewind" href="#top"><svg aria-hidden="true"><use href="#i-rewind" /></svg>{{t:rewind}}</a>
+
+  <noscript><p class="noscript">{{t:noscript}}</p></noscript>
+
+  <script src="{{DATA_SRC}}"></script>
+  <script type="module" src="/js/main.js?v={{V}}"></script>
+</body>
+</html>
